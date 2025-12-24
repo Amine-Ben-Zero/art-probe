@@ -1,34 +1,5 @@
 #!/usr/bin/env python3
-"""
-Adaptive Rate Test Probe (ART Probe)
-====================================
-A professional tool for detecting rate limiting mechanisms in HTTP endpoints.
 
-AUTHOR: Amine Bensalha
-VERSION: 1.0.0
-GitHub: https://github.com/aminebensalha/art-probe
-
-PURPOSE:
-This tool tests for rate limiting by establishing a behavioral baseline
-and incrementally increasing request density. It looks for three signals:
-1. Hard Limits: Explicit HTTP 429 responses.
-2. Soft Limits: Degradation of service (latency spikes) or status code shifts (blocking).
-3. No Limits: Stability under the defined test load.
-
-HOW IT WORKS (ADAPTIVE LOGIC):
-1. Baseline Phase: Sends a small batch of requests to calculate average latency 
-   and determine the "normal" status code.
-2. Ramp-up Phase: Sends increasing batches of concurrent requests.
-3. Analysis: After each batch, it compares performance against the baseline.
-   It stops execution immediately if throttling or blocking is detected to 
-   prevent causing a Denial of Service.
-
-ETHICAL WARNING:
-This tool is for AUTHORIZED SECURITY TESTING ONLY. 
-- Do not use against targets you do not own or have permission to test.
-- Respect the 'max_requests' safety cap.
-- This tool is designed to DETECT limits, not to flood targets.
-"""
 
 import asyncio
 import aiohttp
