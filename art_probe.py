@@ -11,9 +11,6 @@ from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple
 from urllib.parse import urlparse
 
-# ==========================================
-# Configuration & Constants
-# ==========================================
 DEFAULT_MAX_REQUESTS = 100
 START_BATCH_SIZE = 5
 BATCH_INCREMENT = 5
